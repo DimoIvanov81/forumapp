@@ -11,19 +11,12 @@
 
 <body>
     {% include 'nav.html' %}
-<h1> Hello this is the template </h1>
-<h2>This is the current time: {{ current_time }}</h2>
-<h2>
-    <ul>
-        {% for p in person.values %}
-            <li>
-            {{ p }}    
-            </li>
-        {% endfor %}
-    </ul>
+<h1> Hello this is the template home page </h1>
 
-{% lorem 3 p %}
-    
-</h2>
+    <form>
+        {{ form }}
+        <button>Submit</button>
+    </form>
 </body>
 </html>
+ 

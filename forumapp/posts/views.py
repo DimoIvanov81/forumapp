@@ -2,16 +2,13 @@ from datetime import datetime
 
 from django.shortcuts import render
 
+from forumapp.forms import PersonForm
+
 
 # Create your views here.
 def home_page(request):
     contex = {
-        "current_time": datetime.now(),
-        "person": {
-            "name": "Dimo",
-            "last_name": "Ivanov",
-            "email": "dimo.ivanov.lex@gmail.com",
-        }
+        "form": PersonForm(),
     }
     return render(request, 'home_page.html', contex)
 
@@ -33,5 +30,6 @@ def posts(request):
              "content": "I am go for it.",
              "created_time": datetime.now()}
         ]
+
     }
     return render(request, 'posts/posts.html', contex)
